@@ -28,7 +28,7 @@ form.verify({
 
   
  $.ajaxPrefilter(function (options) {
-        options.url = "http://ajax.frontend.itheima.net" + options.url;
+        options.url = "http://api-breakingnews-web.itheima.net" + options.url;
     })
 
 $("#register-form").on("submit", function(e){
@@ -63,8 +63,10 @@ $("#login-form").on("submit", function(e){
             if(res.status !== 0){
                 return layer.msg(res.message);
             }
-            layer.msg("登录成功！");
-            location.href = "/home/index.html";
+            localStorage.setItem("token", res.token);
+            layer.msg("登录成功！", () => {
+                location.href = "/home/index.html";
+            })
         }
     })
 })
