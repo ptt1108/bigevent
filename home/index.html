@@ -49,7 +49,7 @@
                 <span class="user-name">pan</span>
             </div>
             <li class="layui-nav-item layui-this">
-              <a class="" href="/home/dashboard.html" target="dashboard">
+              <a class="" href="/home/dashboard.html" target="iframe-window">
                 <span class="iconfont icon-home"></span>首页</a>
             </li>
             <li class="layui-nav-item">
@@ -64,9 +64,9 @@
               <a href="javascript:;">
                    <span class="iconfont icon-user"></span>个人中心</a>
               <dl class="layui-nav-child">
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
-                <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+                <dd class="user-base-info"><a href="/home/user/user-info.html" target="iframe-window"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
+                <dd><a href="/home/user/user-avatar.html" target="iframe-window"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
+                <dd><a href="/home/user/user-reset.html" target="iframe-window"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
               </dl>
             </li>
           </ul>
@@ -75,7 +75,8 @@
 
       <div class="layui-body">
         <!-- 内容主体区域 -->
-        <iframe src="/home/dashboard.html" frameborder="0" name="dashboard"></iframe>
+        <!-- <iframe src="/home/dashboard.html" frameborder="0" name="iframe-window"></iframe> -->
+        <iframe src="/home/user/user-avatar.html" frameborder="0" name="iframe-window"></iframe>
       </div>
 
      

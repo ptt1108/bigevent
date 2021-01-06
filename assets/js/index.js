@@ -1,13 +1,15 @@
-$.ajax({
-    url:"/my/userinfo",
-    success: function(res){
-        if(res.status === 0){
-            getUserInfo(res.data);
-            console.log(res);
+function getAvatarAndName() {
+    $.ajax({
+        url:"/my/userinfo",
+        success: function(res){
+            if(res.status === 0){
+                getUserInfo(res.data);
+            }
+            
         }
-        
-    }
-})
+    })
+}
+
 
 function getUserInfo(data) {
     let name = data.nickname || data.username;
@@ -23,8 +25,13 @@ function getUserInfo(data) {
     }
 }
 
+getAvatarAndName();
 // 退出
 $(".exit-btn").on("click", function () {
-   localStorage.removeItem("token");
-   location.href = "/home/login.html";
+    layer.confirm('确认退出吗?', {icon: 3, title:'提示'}, function(index){
+        localStorage.removeItem("token");
+        location.href = "/home/login.html";
+        layer.close(index);
+      });
+
 })
